@@ -1,5 +1,5 @@
 from flask import Flask
-from feed_api.api import api
+from .feed import api
 
 app = Flask(__name__)
 
