@@ -7,7 +7,9 @@ decorator==4.3.0
 flake8==3.5.0
 Flask==1.0.2
 Flask-HTTPAuth==3.2.4
+flask-mongoengine==0.9.5
 Flask-PyMongo==2.1.0
+Flask-WTF==0.14.2
 ipdb==0.11
 ipython==7.0.1
 ipython-genutils==0.2.0
@@ -16,6 +18,7 @@ jedi==0.13.1
 Jinja2==2.10
 MarkupSafe==1.0
 mccabe==0.6.1
+mongoengine==0.16.1
 parso==0.3.1
 passlib==1.7.1
 pexpect==4.6.0
@@ -32,3 +35,4 @@ toml==0.10.0
 traitlets==4.3.2
 wcwidth==0.1.7
 Werkzeug==0.14.1
+WTForms==2.2.1
