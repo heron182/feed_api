@@ -1,0 +1,85 @@
+FORMAT: 1A
+HOST: https://api.feed.example.com
+
+# Feed API
+A Restful Feed API made with Flask and MongoDB.
+Authorization should be handle as Basic64
+
+# Users [/users]
+User collection
+
++ Attributes
+    + id: 1 (string) - Unique identifier
+    + name: John Doe (string) - User name
+    + email: johndoe@example.com (string) - User email
+
+## GET
++ Response 200
+    + Attributes
+        + result (array[Users])
+
+## POST
++ Request Create a User
+    + Attributes
+        + name: John Doe (string, required) - User name
+        + email: johndoe@example.com (string, required) - User email
+
++ Response 201
+    + Attributes
+        resut (Users)
+
+
+
+# Comment [/feed/{feed_id}/comment]
+Make a comment on a feed post
+
++ Attributes
+    + id: 1 (string) - Unique identifier
+    + author - (Users) - Comment author
+    + comment: So cool! (string) - Comment content
+
+## POST
++ Request Create a Comment (application/json)
+    + Headers
+
+            Authorization: Basic64
+
+    + Attributes
+        + author - (Users, required)
+        + comment: My post comment (string, required) - Comment content
+
++ Response 201
+    + Attributes
+        + result (Feed)
+
+
+
+# Feed [/feed]
+Feed collection
+
++ Attributes
+    + id: 1 (string) - Unique identifier
+    + author - (Users)
+    + title: Great day at the beach (string) - Post title
+    + content: Post content (string) - Post content
+    + comments - (Comment)
+
+## GET
++ Response 200
+    + Attributes
+        + result (array[Feed])
+
+## POST
++ Request Create a Feed Post (application/json)
+    + Headers
+
+            Authorization: Basic64
+
+    + Attributes
+        + title: Hey all (string, required) - Post title
+        + content: Whats my post is about (string, required) - Post content
+        + author - (Users, required) - Post author
+
++ Response 201
+    + Attributes
+        + result (Feed)
