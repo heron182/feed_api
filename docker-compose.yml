@@ -11,6 +11,9 @@ services:
     entrypoint: ["./run.sh"]
     ports: 
       - 8000:8000
+    environment: 
+      FLASK_ENV: development
+      FLASK_APP: feed
     networks:
       - dev
     depends_on:
